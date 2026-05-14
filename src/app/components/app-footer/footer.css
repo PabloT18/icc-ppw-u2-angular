@@ -1,0 +1,15 @@
+.footer {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #d7deea;
+    background: #ffffff;
+}
+
+.footer h3 {
+    margin: 0 0 0.5rem;
+}
+
+.footer p {
+    margin: 0.25rem 0;
+}

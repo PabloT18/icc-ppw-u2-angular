@@ -1,0 +1,10 @@
+<footer
+    class="footer"
+    aria-label="Informacion del curso"
+>
+    <h3>{{ projectName() | uppercase }}</h3>
+    <p>Docente: {{ instructor() | titlecase }}</p>
+    <p>Actualizado: {{ lastUpdate() | date:'dd/MM/yyyy HH:mm' }}</p>
+    <p>Estudiantes: {{ studentCount() | number:'1.0-0' }}</p>
+    <p>Progreso del modulo: {{ progress() | percent:'1.0-0' }}</p>
+</footer>
