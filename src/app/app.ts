@@ -6,7 +6,7 @@ import { AppFooterComponent } from './components/app-footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppHeaderComponent, AppHeroComponent, AppFooterComponent],
+  imports: [RouterOutlet, AppHeaderComponent, AppFooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

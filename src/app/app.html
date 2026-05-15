@@ -1,6 +1,14 @@
+<!-- Header global: visible en todas las rutas -->
+<app-header />
+
+<!-- Contenedor del contenido principal de cada página -->
 <main class="app-shell">
-  <app-header />
+  <!--
+    router-outlet: marcador donde Angular inserta el componente
+    de la ruta activa. Se reemplaza al navegar entre páginas.
+  -->
   <router-outlet />
-  <app-hero />
-  <app-footer />
 </main>
+<app-footer />
+
+<!-- Footer global: visible en todas las rutas -->
