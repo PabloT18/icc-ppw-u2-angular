@@ -1,59 +1,80 @@
-# PpwAngular21
+# PPW Angular 21
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Proyecto incremental de la materia Programacion y Plataformas Web, desarrollado con Angular 21.
 
-## Development server
+## Resumen Del Proyecto
 
-To start a local development server, run:
+Este repositorio se construyo por practicas incrementales:
 
-```bash
-ng serve
+1. Setup base del proyecto y configuracion inicial.
+2. Fundamentos de componentes standalone (`header`, `hero`, `footer`) con signals y pipes.
+3. Navegacion por rutas (`home`, `students`, `students/:id`) con shell global.
+
+## Historial Por Version (Tags)
+
+### v1.0.0 - Practica 01 (Setup Inicial)
+
+Tag: `v1.0.0`  
+Commit: `960b7c6`
+
+Cambios principales:
+
+- Limpieza del template raiz en `src/app/app.html`.
+- Ajuste de configuracion base en `src/app/app.ts`.
+- Estilos globales iniciales en `src/styles.css`.
+- Inclusion de guias de trabajo en `guias/01-instalacion-configuracion-practica.md` y `guias/02-fundamentos-angular-practica.md`.
+
+### v1.2.0 - Practica 02 (Fundamentos)
+
+Tag: `v1.2.0`  
+Commit: `22cdc10`
+
+Cambios principales:
+
+- Composicion raiz en `src/app/app.ts` y `src/app/app.html`.
+- Creacion de componentes standalone:
+	- `src/app/components/app-header/`
+	- `src/app/components/app-hero/`
+	- `src/app/components/app-footer/`
+- Footer con 5 pipes en plantilla (`uppercase`, `titlecase`, `date`, `number`, `percent`) en `src/app/components/app-footer/footer.html`.
+- Nueva guia de navegacion en `guias/03-navegacion-practica.md`.
+
+### v1.3.0 - Practica 03 (Navegacion)
+
+Tag: `v1.3.0`  
+Commit: `77c564c`
+
+Cambio registrado en el tag:
+
+- Ajuste en `src/app/components/app-hero/hero.html`.
+
+Nota: aunque el commit etiquetado `v1.3.0` registra un cambio puntual, el estado actual del proyecto ya contiene estructura de navegacion por features (`home` y `students`) y rutas en `src/app/app.routes.ts`.
+
+## Estructura Actual Relevante
+
+```text
+src/app/
+	app.config.ts
+	app.routes.ts
+	app.ts
+	app.html
+	components/
+		app-header/
+		app-hero/
+		app-footer/
+	features/
+		home/pages/home-page/
+		students/pages/students-page/
+		students/pages/student-detail-page/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Comandos Utiles
 
 ```bash
-ng generate component component-name
+pnpm install
+pnpm start
+pnpm exec ng build
+pnpm test
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Aplicacion local: `http://localhost:4200`
