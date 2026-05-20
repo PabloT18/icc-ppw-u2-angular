@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 type LayoutCard = {
   meta: string;
@@ -73,4 +73,7 @@ export class LayoutsPage {
       ],
     },
   ];
+
+
+
 }
