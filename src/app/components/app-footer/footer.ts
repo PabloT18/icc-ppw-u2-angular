@@ -9,7 +9,7 @@ import { DatePipe, DecimalPipe, PercentPipe, TitleCasePipe, UpperCasePipe } from
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppFooterComponent {
-    readonly projectName = signal('ppw angular 21');
+    readonly projectName = signal('foooter');
     readonly instructor = signal('pablo torres');
     readonly lastUpdate = signal(new Date());
     readonly studentCount = signal(32);
