@@ -35,6 +35,9 @@ export class FormUtils {
                 case 'required':
                     return 'Este campo es requerido';
 
+                case 'requiredTrue':
+                    return 'Debe aceptar este campo';
+
                 case 'minlength': {
                     const minLengthError = errors['minlength'] as { requiredLength: number } | undefined;
                     return minLengthError ? `Minimo ${minLengthError.requiredLength} caracteres` : 'Error de validacion';
