@@ -4,6 +4,7 @@ import { StudentsPage } from './features/students/pages/students-page/students-p
 import { StudentDetailPage } from './features/students/pages/student-detail-page/student-detail-page';
 import { LayoutsPage } from './features/layouts-page/layouts-page';
 import { SingupPage } from './features/singup-page/singup-page';
+import { ProfilePage } from './features/profile-page/profile-page';
 
 export const routes: Routes = [
     { path: '', component: HomePage },
@@ -11,6 +12,7 @@ export const routes: Routes = [
     { path: 'students/:id', component: StudentDetailPage },
     { path: 'layouts', component: LayoutsPage },
     { path: 'forms', component: SingupPage },
+    { path: 'profile', component: ProfilePage },
 
     //redireccionamient
     { path: '**', redirectTo: '' }

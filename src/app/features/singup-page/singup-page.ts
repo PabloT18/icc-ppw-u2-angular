@@ -5,6 +5,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { Router } from '@angular/router';
 import { passwordMatchValidator } from './validators/password-match.validator';
 import { emailUniqueValidator } from './validators/email-unique.validator';
+import { FormUtils } from '../../shared/utils/form-utils';
 
 @Component({
   selector: 'app-singup-page',
@@ -15,6 +16,8 @@ import { emailUniqueValidator } from './validators/email-unique.validator';
 export class SingupPage {
 
   private fb = inject(FormBuilder);
+
+  formUtils = FormUtils;
 
 
   form = this.fb.group({

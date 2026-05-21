@@ -26,14 +26,8 @@
             @if (email.status === 'PENDING') {
             <p class="text-xs text-slate-500">Verificando disponibilidad...</p>
             }
-            @if (email.touched && email.hasError('emailTaken')) {
-            <p class="text-xs text-red-600">Este email ya está registrado</p>
-            }
-            @if (email.touched && email.hasError('required')) {
-            <p class="text-xs text-red-600">Email es requerido</p>
-            }
-            @if (email.touched && email.hasError('email')) {
-            <p class="text-xs text-red-600">Email inválido</p>
+            @if (formUtils.isValidField(form, 'email')) {
+            <p class="text-xs text-red-600">{{ formUtils.getFieldError(form, 'email') }}</p>
             }
         </div>
         <!-- Password -->
@@ -50,11 +44,8 @@
                 placeholder="Al menos 8 caracteres"
                 formControlName="password"
             />
-            @if (password.touched && password.hasError('required')) {
-            <p class="text-xs text-red-600">Contraseña es requerida</p>
-            }
-            @if (password.touched && password.hasError('minlength')) {
-            <p class="text-xs text-red-600">Mínimo 8 caracteres</p>
+            @if (formUtils.isValidField(form, 'password')) {
+            <p class="text-xs text-red-600">{{ formUtils.getFieldError(form, 'password') }}</p>
             }
         </div>
 
@@ -72,6 +63,9 @@
                 placeholder="Repite tu contraseña"
                 formControlName="confirmPassword"
             />
+            @if (formUtils.isValidField(form, 'confirmPassword')) {
+            <p class="text-xs text-red-600">{{ formUtils.getFieldError(form, 'confirmPassword') }}</p>
+            }
         </div>
         @if (form.hasError('passwordMismatch') && confirmPassword.touched) {
         <p class="text-xs text-red-600">Las contraseñas no coinciden</p>
