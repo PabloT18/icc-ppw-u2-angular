@@ -1,24 +1,73 @@
-<section class="hero">
-    <h1>{{ title() | uppercase }}</h1>
-    <p>{{ subtitle() }}</p>
+<section
+    id="home"
+    class="relative overflow-hidden py-20"
+>
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
+        <div class="relative z-10">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
+                <span class="text-sm font-semibold uppercase tracking-wider">
+                    Disponible para nuevas oportunidades
+                </span>
+            </div>
 
-    <button
-        type="button"
-        (click)="toggleMode()"
-    >Vista: {{ viewMode() }}</button>
+            <h1 class="mb-6 text-5xl font-black tracking-tight text-base-content md:text-6xl">
+                Desarrollador
+                <span class="text-primary">Full Stack - Pablo</span>
+            </h1>
 
-    @switch (viewMode()) {
-    @case ('lista') {
-    <ul>
-        @for (item of topics(); track item) {
-        <li>{{ item }}</li>
-        } @empty {
-        <p>No hay temas registrados.</p>
-        }
-    </ul>
-    }
-    @case ('resumen') {
-    <p>Total de temas: <strong>{{ topics().length }}</strong></p>
-    }
-    }
+            <p class="mb-10 max-w-xl text-lg leading-8 text-base-content/70">
+                Arquitecto de soluciones digitales escalables. Transformo ideas complejas
+                en interfaces limpias y sistemas backend robustos con enfoque en rendimiento.
+            </p>
+
+            <div class="mb-12 flex flex-wrap gap-3">
+                <span class="badge badge-primary badge-outline px-4 py-4">Angular</span>
+                <span class="badge badge-primary badge-outline px-4 py-4">React</span>
+                <span class="badge badge-primary badge-outline px-4 py-4">Spring Boot</span>
+                <span class="badge badge-primary badge-outline px-4 py-4">PostgreSQL</span>
+                <span class="badge badge-primary badge-outline px-4 py-4">TypeScript</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+                <button class="btn btn-primary px-8">
+                    Contáctame
+                </button>
+
+                <button class="btn btn-outline px-8">
+                    Descargar CV
+                </button>
+            </div>
+        </div>
+
+        <div class="relative">
+            <div class="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-primary/20 blur-3xl"></div>
+
+            <div class="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-secondary/20 blur-3xl"></div>
+
+            <div class="relative z-10 overflow-hidden rounded-3xl border-8 border-base-100 shadow-2xl">
+                <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCExzEFmOs_YBb_buKlN4RspGbfSJLw_TqflqG_o1Py4LMrpN-sI6ZbkdFUgjyxiYzahBC_AwWAazK11g6WTXh_HThqOmTXjXeZIPGEOm7uAdYfJ7O9RxdcOvIJvBTSzc-7hWABR-ycojC0JfpJ0vqqejIEaFX1oidVjKYJHGM_a1eVA96_GBmyNHF_HlsXPHChpvkrY4_gVg7so_ASAo_KD_f11Dr6FX22hL4MsYFze5XCGR9d9pul8Id9bOi6RuqqF_FQYfqMl9s"
+                    alt="Professional Developer"
+                    class="h-[560px] w-full object-cover"
+                />
+            </div>
+
+            <div
+                class="absolute -bottom-8 left-4 z-20 rounded-2xl border border-base-300 bg-base-100/80 p-5 shadow-xl backdrop-blur-xl md:-left-8">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-content">
+                        ✓
+                    </div>
+
+                    <div>
+                        <p class="text-2xl font-black text-base-content">50+</p>
+                        <p class="text-sm text-base-content/60">
+                            Proyectos completados
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

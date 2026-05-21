@@ -1,0 +1,44 @@
+<section class="relative overflow-hidden rounded-3xl bg-liner-to-br from-slate-100 via-blue-50 to-sky-100 p-8 
+    shadow-2xl 
+    transition duration-200
+    hover:-translate-y-1
+    hover:shadow-blue-900/20">
+    <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/40 blur-3xl"></div>
+
+    <div class="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-sky-300/30 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-slate-700">
+            {{ eyebrow() }}
+        </p>
+
+        <h3 class="mt-4 text-4xl font-black tracking-tight text-slate-950 md:text-5xl">
+            {{ title() }}
+        </h3>
+
+        <p class="mt-5 max-w-xl text-lg leading-8 text-slate-700">
+            {{ description() }}
+        </p>
+
+        <button
+            class="btn mt-6 border-none bg-white text-slate-950 shadow-lg transition hover:scale-[1.02] hover:bg-slate-100"
+        >
+            {{ actionLabel() }}
+        </button>
+    </div>
+</section>
+<div class="card card-side bg-base-100 shadow-sm">
+    <figure>
+        <img
+            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+            alt="Movie"
+        />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">New movie is released!</h2>
+        <p>Click the button to watch on Jetflix app.</p>
+        <div class="card-actions justify-end">
+            <button class="btn btn-primary">Watch</button>
+        </div>
+    </div>
+</div>

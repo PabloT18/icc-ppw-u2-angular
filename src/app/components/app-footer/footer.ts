@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { DatePipe, DecimalPipe, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-footer',
-    imports: [UpperCasePipe, TitleCasePipe, DatePipe, DecimalPipe, PercentPipe],
+    imports: [RouterLink],
     templateUrl: './footer.html',
     styleUrl: './footer.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
