@@ -2,6 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { SimpsonsCharacter, SimpsonsResponse } from '../models/simpsons.interface';
 
+
+
+
+
 import {
   Observable,
   catchError,
@@ -11,13 +15,33 @@ import {
   throwError,
   timeout,
 } from 'rxjs';
+
+import { environment } from '../../../../environments/environment';
+import { Options } from '../../../shared/interfaces/options-pagination.interface';
+
+
 @Injectable({
   providedIn: 'root',
 })
 export class SimpsonsService {
 
   private http = inject(HttpClient);
-  private readonly baseUrl = 'https://thesimpsonsapi.com/api';
+  // private readonly baseUrl = 'https://thesimpsonsapi.com/api';
+  private readonly baseUrl = environment.apiUrl;
+
+
+  getCharactersOptions(options: Options = {}): Observable<SimpsonsResponse> {
+    const { page = 1, limit = 10 } = options;
+    return this.http
+      .get<SimpsonsResponse>(
+        `${this.baseUrl}/characters?page=${page}&limit=${limit}`
+      )
+      .pipe(
+        catchError(() =>
+          throwError(() => new Error('No se pudieron cargar los personajes'))
+        )
+      );
+  }
 
   // Devuelve un Observable tipado; no hace la llamada hasta que alguien se suscribe.
   getCharacters(page: number = 1): Observable<SimpsonsResponse> {
